@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>💾 Uploading</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: Arial;
+      color: #555555;
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      background-color: #43c7aa;
+      color: #fff;
+      padding: 14px 20px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 30px 0;
+    }
+
+    input[type=file] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      font-weight: bold;
+      background-color: #43c7aa;
+      color: #fff;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    span {
+      margin: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Uploading</h1>
+  <!--  SINGLE FILE -->
+  <form action="/uploadfile" enctype="multipart/form-data" method="POST">
+    <label for="file">💿 Select one file and save on server folder :</label>
+    <input id="file" type="file" name="file" />
+    <input type="submit" value="Upload a file" />
+  </form>
+  <!-- MULTIPLE FILES -->
+  <form action="/uploadmultiple" enctype="multipart/form-data" method="POST">
+    <label for="files">📀 Select multiple files and save on server folder :</label>
+    <input id="files" type="file" name="files" multiple>
+    <input type="submit" value="Upload your files" />
+  </form>
+  <!--   PHOTO-->
+  <form action="/uploadimage" enctype="multipart/form-data" method="POST">
+    <label for="image">🖼️ Select image and save in MogoDB :</label>
+    <input id="image" type="file" name="image" accept="image/*" />
+    <input type="submit" value="Upload an Image" />
+  </form>
+  <a href="/images">All images</a>
+  <p>Find image by id exemple: </p>
+  <p><B>http://localhost:3000/image/:id</B></p>
+  <span>Bigeard ❤️</span>
+</body>
+
+</html>
